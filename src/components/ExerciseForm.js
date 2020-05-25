@@ -3,11 +3,6 @@ import React from 'react'
 
 class ExerciseForm extends React.Component {
 
-    handleSubmit = e => {
-        e.preventDefault()
-        console.log(this.state)
-    }
-
     // handleChange = e => {
     //     // let partialState = {}
     //     // partialState[e.target.name] = e.target.value
@@ -17,10 +12,10 @@ class ExerciseForm extends React.Component {
     //     })
     // }
     render() {
-        const { onChange, form } = this.props
+        const { onChange, onSubmit, form } = this.props
         return (
             <div className="container">
-                <form onSubmit={this.handleSubmit} >
+                <form onSubmit={onSubmit} >
                     <div className="form-group">
                         <input
                             type="text"

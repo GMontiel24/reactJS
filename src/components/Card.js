@@ -1,7 +1,7 @@
 import React from 'react'
-import exerciseImg from '../images/exercise.png'
 import circlesImg from '../images/circles.png'
 import './styles/Card.css'
+import emptyImg from '../images/empty.png'
 
 class Card extends React.Component {
     //iniciar el estado del componente, enlazar eventos y setear variables globales
@@ -25,13 +25,13 @@ class Card extends React.Component {
         return (
             <div className="card mx-auto Fitness-Card"
                 style={{
-                    backgroundImage: `url(${circlesImg}), linear-gradient(to right, ${leftColor},${rightColor})`
+                    backgroundImage: `url(${circlesImg}), linear-gradient(to right, ${leftColor || '#373B44'},${rightColor || '#4286f4'})`
                 }}
             >
                 <div className="card-body">
                     <div className="row center">
                         <div className="col-6">
-                            <img src={img} className="float-right" alt="Exercise"></img>
+                            <img src={img || emptyImg} className="float-right" alt="Exercise"></img>
                         </div>
                         <div className="col-6 Fitness-Card-Info">
                             <h1>{title}</h1>
