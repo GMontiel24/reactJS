@@ -2,22 +2,18 @@ import React from 'react'
 import Card from '../components/Card'
 
 const ExerciseList = ({ exercises }) => (
-    <>
+    <React.Fragment>
         {
             exercises.map((exercise) => {
                 return (
                     <Card
                         key={exercise.id}
-                        title={exercise.title}
-                        description={exercise.description}
-                        img={exercise.img}
-                        leftColor={exercise.leftColor}
-                        rightColor={exercise.rightColor}
+                        {...exercise}
                     />
                 )
             })
         }
-    </>
+    </React.Fragment>
 )
 
 export default ExerciseList
